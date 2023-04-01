@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster</title>
+    <link rel="icon" href="images/Hamster.png">
+    <link rel = "stylesheet" href = "styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="sticky">
+        <nav class = "navbar">
+            <div class = "logo">
+                <a href="index.html"><img src="images/Hamster.png" alt="Logo">Hamster</a>
+            </div>
+            <div class="toggle"></div>
+            <ul class= "navbar_container">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Max Calculator</a></li>
+                <li class = "dropdown">
+                    <a href="program.html" class="dropbtn">Programs</a>
+                    <div class="dropdown-content">
+                        <a href="beginner.html">Beginner</a>
+                        <a href="intermediate.html">Intermediate</a>
+                        <a href="advanced.html">Advanced</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        </div>
+
+  <div class="intro">
+    <img src="images/BW_intermediate.jpeg" alt="">
+  </div>
+
+    <div class="calc-box">
+        <h1>Intermediate Program</h1>
+        <p>
+            Enter your one rep maxes for the following lifts.
+        </p>
+        <form onsubmit="squatting();deadlifting();benching();selectedWorkouts(); showHidden(); return false;">
+            <div class="row">
+                <div class="column">
+                    <label for="bench">Bench (kg/lb)</label>
+                    <input type="text" id = "bench"> <br><br>
+
+                    <label for="squat">Squat (kg/lb)</label>
+                    <input type="text" id = "squat"> <br><br>
+
+                    <label for="deadlift">Deadlift (kg/lb)</label>
+                    <input type="text" id = "deadlift"> <br><br>
+                </div>
+                <div class="column">
+                    <label for="ube#1">Upper Back Exercise #1</label>
+                    <select name="ube#1" id ="ube#1">
+                        <option value="Dumbbell">Dumbbell Row</option>
+                        <option value="Barbell Row">Barbell Row</option>
+                        <option value="Machine Row">Machine Row</option>
+                    </select><br><br>
+
+                    <label for="ube#2">Upper Back Exercise #2</label>
+                    <select name="ube#2" id="ube#2">
+                        <option value="Lat Pulldown">Lat Pulldown</option>
+                        <option value="Weighted Pullup">Weighted Pull-up</option>
+                        <option value="Weighted Chinup">Weighted Chin-up</option>
+                    </select><br><br>
+
+                    <label for="shoulder">Shoulder Exercise</label>
+                    <select name="shoulder" id="shoulder">
+                        <option value="Seated Dumbbell OHP">Seated Dumbell OHP</option>
+                        <option value="Standing Dumbbell OHP">Standing Dumbbell OHP</option>
+                        <option value="Military Press">Military Press</option>
+                        <option value="Lateral Raise">Lateral Dumbbell Raise</option>
+                    </select><br><br>
+                </div>
+            </div>
+            <button type="submit" class = "button is-primary is-medium">Create Workout Plan</button><br><br>
+            <script src = "calculate.js"></script>
+        </form>
+        <h2 id = "invalid" hidden>Invalid Entries! Please enter non-negative numbers. <p>You can determine your one rep maxes from the max calculator.</p></h2>
+        <div id = "grid" hidden>
+            <div class="row">
+                <div class="column">
+                    <h2>Week 1 Day 1</h2>
+                    <table>
+                        <tr>
+                            <th>Workout</th>
+                            <th>Set 1</th>
+                            <th>Set 2</th>
+                            <th>Set 3</th>
+                            <th>Set 4</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Squat
+                            </td>
+                            <td id = "squatset1"></td>
+                            <td id = "squatset2"></td>
+                            <td id = "squatset3"></td>
+                            <td id = "squatset4"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Deadlift
+                            </td>
+                            <td id="deadliftset1"></td>
+                            <td id="deadliftset2"></td>
+                            <td> None </td>
+                            <td> None </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Optional Exercise 1
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td> None </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Optional Exercise 2
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td> None </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="column">
+                <h2>Week 1 Day 2</h2>
+                <table>
+                    <tr>
+                        <th>Workout</th>
+                        <th>Set 1</th>
+                        <th>Set 2</th>
+                        <th>Set 3</th>
+                        <th>Set 4</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bench Press
+                        </td>
+                        <td id="bench1"></td>
+                        <td id="bench2"></td>
+                        <td id="bench3"></td>
+                        <td id="bench4"></td>
+                    </tr>
+
+                    <tr>
+                        <td id = "first1" ></td>
+                        <td> 10 reps </td>
+                        <td> 10 reps </td>
+                        <td> 8 reps </td>
+                        <td> 6 reps </td>
+                    </tr>
+
+                    <tr>
+                        <td id = "second1" ></td>
+                        <td> 12 reps </td>
+                        <td> 12 reps </td>
+                        <td> 10 reps </td>
+                        <td> 8 reps </td>
+                    </tr>
+
+
+                    <tr>
+                        <td id = "shoulder1"></td>
+                        <td> 12 reps </td>
+                        <td> 12 reps </td>
+                        <td> 10 reps </td>
+                        <td> 8 reps </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Optional Exercise #1
+                        </td>
+                        <td> 8-12 reps </td>
+                        <td> 8-12 reps </td>
+                        <td> 8-12 reps </td>
+                        <td> None </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Optional Exercise #2
+                        </td>
+                        <td> 8-12 reps </td>
+                        <td> 8-12 reps </td>
+                        <td> 8-12 reps </td>
+                        <td> None </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h2>Week 1 Day 3</h2>
+                    <table>
+                        <tr>
+                            <th>Workout</th>
+                            <th>Set 1</th>
+                            <th>Set 2</th>
+                            <th>Set 3</th>
+                            <th>Set 4</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bench Press
+                            </td>
+                            <td id="bench5"></td>
+                            <td id="bench6"></td>
+                            <td id="bench7"></td>
+                            <td id="bench8"></td>
+                        </tr>
+    
+                        <tr>
+                            <td id = "first2"></td>
+                            <td> 10 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                            <td> 6 reps </td>
+                        </tr>
+    
+                        <tr>
+                            <td id = "second2"></td>
+                            <td> 12 reps </td>
+                            <td> 12 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td id = "shoulder2"></td>
+                            <td> 12 reps </td>
+                            <td> 12 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Optional Exercise #1
+                            </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> None </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Optional Exercise #2
+                            </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> None </td>
+                        </tr>
+                    </table>
+                    </div>
+                
+                <div class="column">
+                <h2>Week 1 Day 4</h2>
+                <table>
+                    <tr>
+                        <th>Workout</th>
+                        <th>Set 1</th>
+                        <th>Set 2</th>
+                        <th>Set 3</th>
+                        <th>Set 4</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Squat
+                        </td>
+                        <td id="squatset5"></td>
+                        <td id="squatset6"></td>
+                        <td id="squatset7"></td>
+                        <td id="squatset8"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Deadlift
+                        </td>
+                        <td id="deadliftset3"></td>
+                        <td id="deadliftset4"></td>
+                        <td> None </td>
+                        <td> None </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Optional Exercise 1
+                        </td>
+                        <td> </td>
+                        <td></td>
+                        <td></td>
+                        <td> None </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Optional Exercise 2
+                        </td>
+                        <td> </td>
+                        <td></td>
+                        <td></td>
+                        <td> None </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h2>Week 1 Day 5</h2>
+                    <table>
+                        <tr>
+                            <th>Workout</th>
+                            <th>Set 1</th>
+                            <th>Set 2</th>
+                            <th>Set 3</th>
+                            <th>Set 4</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bench Press
+                            </td>
+                            <td id="bench9"></td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                        </tr>
+    
+                        <tr>
+                            <td id = "first3"></td>
+                            <td> 10 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                            <td> 6 reps </td>
+                        </tr>
+    
+                        <tr>
+                            <td id = "second3"></td>
+                            <td> 12 reps </td>
+                            <td> 12 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                        </tr>
+    
+    
+                        <tr>
+                            <td id = "shoulder3"></td>
+                            <td> 12 reps </td>
+                            <td> 12 reps </td>
+                            <td> 10 reps </td>
+                            <td> 8 reps </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Optional Exercise #1
+                            </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> None </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Optional Exercise #2
+                            </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> 8-12 reps </td>
+                            <td> None </td>
+                        </tr>
+                    </table>
+                    </div>
+                
+            </div>
+            
+            </table>
+
+            <h1>Like this workout? Check out the rest of the workout in this excel sheet.</h1>
+            
+            <a href="Intermediate.xlsx" download><button class = "button is-primary is-medium">Download Intermediate 6 Week Program</button></a> <br><br>
+        </div>
+    </div>
+</body>
+</html>

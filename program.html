@@ -12,55 +12,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class = "navbar">
-        <div class = "logo">
-            <a href="index.html"><img src="Hamster.png" alt="Logo">Hamster</a>
+    <div class="sticky">
+        <nav class = "navbar">
+            <div class = "logo">
+                <a href="index.html"><img src="images/Hamster.png" alt="Logo">Hamster</a>
+            </div>
+            <div class="toggle"></div>
+            <ul class= "navbar_container">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Max Calculator</a></li>
+                <li class = "dropdown">
+                    <a href="program.html" class="dropbtn">Programs</a>
+                    <div class="dropdown-content">
+                        <a href="beginner.html">Beginner</a>
+                        <a href="intermediate.html">Intermediate</a>
+                        <a href="advanced.html">Advanced</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
         </div>
-        <div class="toggle"></div>
-        <ul class= "navbar_container">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="calculator.html">Max Calculator</a></li>
-            <li><a href="program.html">Programs</a></li>
-        </ul>
-    </nav>
-
-    <h1 style = "font-family: Fjalla One, sans-serif; text-align: center;">Programs Available</h1>
-    <div class=""></div>
     <div class="row">
-
         <div class="column">
-            <div class="beginner-container" >
-                <h1 style = "color: green;">Beginner Programs</h1>
-                <h2>Candito Linear Program</h2>
-        
-                <h3>Strength/Control Program</h3>
-                <p> Monday Heavy Lower Day <br>
-                    Tuesday Heavy Upper Day <br>
-                    Thursday Control Lower Day <br>
-                    Friday Control Upper Day <br>
-                </p>
-            </div>
+            <a href="beginner.html">
+                <img src="images/Beginner.jpg" alt="" class = "image">
+                <div class="middle">
+                    <div class="text">
+                        Beginner Program
+                    </div>
+                </div>
+            </a>
         </div>
         <div class="column">
-            <div class="intermediate-container">
-                <h1 style = "color: yellowgreen;">Intermediate Programs</h1>
-                <h2>Candito 6 Week Strength Program</h2>
-                <p> Week 1 Muscular Conditioning
-                    Week 2 Hypertrophy<br>
-                    Week 3 Linear Max OT<br>
-                    Week 4 Heavy Weight Acclimation/Explosiveness<br>
-                    Week 5 Intense Strength Training<br>
-                    Week 6 Deload (optional)<br>
-                </p>
-            </div>
+            <a href="intermediate.html">
+                <img src="images/Intermediate.jpg" alt="" class = "image" >
+                <div class="middle">
+                    <div class="text">
+                        Intermediate Program
+                    </div>
+                </div>
+            </a>
         </div>
         <div class="column">
-            <div class="Advanced-container">
-                <h1 style = "color: rgb(255, 102, 0);">Advanced Programs</h1>
-                <h2>Candito 9 Week Squat Program</h2>
-                <p></p>
-                <h2>Candito Advanced Bench Program</h2>
-            </div>
+            <a href="advanced.html">
+                <img src="images/Advanced.jpg" alt="" class = "image">
+                <div class="middle">
+                    <div class="text">
+                        Advanced Program
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </body>

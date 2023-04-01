@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="icon" href="Hamster.png">
+    <link rel="icon" href="images/Hamster.png">
     <link rel = "stylesheet" href = "styles.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,26 @@
 </head>
 <body>
 
-    <nav class = "navbar">
-        <div class = "logo">
-            <a href="index.html"><img src="Hamster.png" alt="Logo">Hamster</a>
+    <div class="sticky">
+        <nav class = "navbar">
+            <div class = "logo">
+                <a href="index.html"><img src="images/Hamster.png" alt="Logo">Hamster</a>
+            </div>
+            <div class="toggle"></div>
+            <ul class= "navbar_container">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Max Calculator</a></li>
+                <li class = "dropdown">
+                    <a href="program.html" class="dropbtn">Programs</a>
+                    <div class="dropdown-content">
+                        <a href="beginner.html">Beginner</a>
+                        <a href="intermediate.html">Intermediate</a>
+                        <a href="advanced.html">Advanced</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
         </div>
-        <div class="toggle"></div>
-        <ul class= "navbar_container">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="calculator.html">Max Calculator</a></li>
-            <li><a href="program.html">Programs</a></li>
-        </ul>
-    </nav>
 
     <div class="calc-box">
     <h1>Calculate One Rep Max</h1>
@@ -31,16 +40,16 @@
         Calculate your one-rep max (1RM) for any lift. Your one-rep max is the max weight you can lift for a single
           repetition for a given exercise. 
     </p>
-    <form onsubmit="calculateMax(); return false; unit()">
+    <form onsubmit="calculateMax(); return false;">
         <label for="Weight">Weight (kg/lb)</label>
         <input type="text" id = "weight"> <br><br>
         <label for ="Reps">Repititions</label>
         <input type="text" id = "rep"> <br> <br>
         <button type="submit" class = "button is-primary is-medium">Calculate One Rep Max</button>
         <script src = "calculate.js"></script>
-        <p>Your one rep max is: <span id="result"></span></p>
+        <p><span id = "result"></span></p>
     </form>
-</div>
+    </div>
 
 </body>
 </html>
