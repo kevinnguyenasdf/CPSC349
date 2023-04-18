@@ -98,18 +98,26 @@ function calculateMax() {
     let benchMax = parseInt(document.getElementById("bench").value);
     let deadliftMax = parseInt(document.getElementById("deadlift").value);
     let squatMax = parseInt(document.getElementById("squat").value);
+
     if(Number.isNaN(benchMax)||Number.isNaN(deadliftMax)||Number.isNaN(squatMax)){
         var hiddenTag = document.getElementById("invalid");
         hiddenTag.style.display = "block";
+        var gridTag = document.getElementById("grid");
+        gridTag.style.display = "none";
         return false;
     }
     if(benchMax <= 0 || deadliftMax <= 0 || squatMax <= 0){
         var hiddenTag = document.getElementById("invalid");
         hiddenTag.style.display = "block";
+        var gridTag = document.getElementById("grid");
+        gridTag.style.display = "none";
         return false;
     }
+
+    var hiddenTagInvalid = document.getElementById("invalid");
     var hiddenTag = document.getElementById("grid");
     hiddenTag.style.display = "block";
+    hiddenTagInvalid.style.display = "none";
     return false;
   }
 
